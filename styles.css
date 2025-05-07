@@ -37,11 +37,11 @@ body {
 
 main {
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   background-size: cover;
   background-position: center;
   animation: fadeBackground 5s infinite alternate ease-in-out;
-
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,23 +75,25 @@ main {
 }
 
 .convite__fundo {
-  z-index: 1;
+  /* z-index: 1; */
   height: 50%;
   width: 100%;
   background-size: contain;
-  background-position:bottom;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-image: url("./img/frozen.png");
 }
 
 h1 {
   color: #020241;
+  /* color: white; */
   font-size: 2.8em;
   padding: 0.5em;
 }
 
 h2 {
   color: #020241;
+  color: white;
   font-size: 1.5em;
   padding: 0.5em;
 }
@@ -99,12 +101,15 @@ h2 {
 p,
 a {
   color: #2e2e8e;
-  font-size: 1em;
+  color: white;
+  font-size: 1.2em;
   padding-bottom: 0.5em;
 }
 
 #p-whatsapp {
   margin-bottom: 0.5em;
+  color: #020241;
+  color: white;
 }
 
 #p-data {
@@ -124,7 +129,7 @@ a {
   align-items: center;
   text-align: center;
   position: relative;
-  width: 100%;
+  width: 80%;
   height: 100%;
 }
 
@@ -132,7 +137,7 @@ a {
 .map-container {
   position: relative;
   display: none;
-  width: 60%;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -145,12 +150,24 @@ a {
   border: 0;
 }
 
+.map-wrapper p,
+a {
+  color: #2e2e8e;
+  font-size: 1em;
+}
+
+.map-wrapper p:hover,
+a:hover {
+  cursor: pointer;
+}
+
 /* Mostra o mapa quando o mouse está sobre o link OU o mapa */
 .map-wrapper:hover .map-container {
   display: block;
+  cursor: pointer;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 435px) {
   h1 {
     font-size: 2.4em;
   }
@@ -165,5 +182,9 @@ a {
   p,
   a {
     font-size: 0.9em;
+  }
+  .map-wrapper p,
+  a {
+    font-size: 0.8em;
   }
 }
