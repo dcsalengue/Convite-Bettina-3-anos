@@ -1,0 +1,142 @@
+:root {
+  --cor-de-fundo: #ebecee;
+  --branco: #ffffff;
+  --laranja: #eb9b00;
+  --azul-degrade: linear-gradient(97.54deg, #002f52 35.49%, #326589 165.37%);
+  --azul: #002f52;
+  --cinza-fundo: #f9f9f9;
+  --preto: #000000;
+  --cinza: #474646;
+  --cinza-claro: #858585;
+  --btn-hover: #d7deed;
+  --btn-hover-borda: #a0a6b5;
+  --fonte-principal: "Poppins";
+  --fonte-secundaria: "Josefin Sans";
+}
+
+html,
+body {
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-principal);
+  font-weight: 400;
+  font-size: 16px;
+  background-color: var(--cor-de-fundo);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: var(--azul-degrade);
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  animation: fadeBackground 5s infinite alternate ease-in-out;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@keyframes fadeBackground {
+  0% {
+    background-image: url("./img/fundo1.png");
+    /* opacity: 0.5; */
+  }
+  50% {
+    background-image: url("./img/fundo2.png");
+    /* opacity: 0; */
+  }
+  100% {
+    background-image: url("./img/fundo1.png");
+    /* opacity: 0.5; */
+  }
+}
+
+.convite__texto {
+    padding-top: 0.5em;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: solid 1px red; */
+}
+
+.convite__fundo {
+  height: 50%;
+  width: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("./img/frozen.png");
+}
+
+h1 {
+  color: #020241;
+  font-size: 48px;
+  padding: 0.5em;
+}
+
+h2 {
+  color: #020241;
+  font-size: 24px;
+  padding: 0.5em;
+}
+
+p, a {
+  color: #2e2e8e;
+  font-size: 18px;
+  padding-bottom: 0.5em;
+}
+
+
+#data{
+    font-size: 24px;
+    padding: 0.5em;
+}
+
+#link-endereco{
+    margin-top: 1em;
+}
+
+.map-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 16:9 ratio (9 / 16 = 0.5625) */
+.map-container {
+  position: relative;
+  display: none;
+  width: 80%;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Mostra o mapa quando o mouse está sobre o link OU o mapa */
+.map-wrapper:hover .map-container {
+  display: block;
+}
